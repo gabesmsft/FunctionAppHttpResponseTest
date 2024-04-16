@@ -30,7 +30,7 @@
     },
     "packageUri": {
       "type": "string",
-      "defaultValue": "https://github.com/gabesmsft/FunctionAppHttpResponseTest/blob/master/app.zip",
+      "defaultValue": "https://github.com/gabesmsft/FunctionAppHttpResponseTest/raw/master/app.zip",
       "metadata": {
         "description": "The zip content url."
       }

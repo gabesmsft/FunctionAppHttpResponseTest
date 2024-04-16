@@ -28,14 +28,9 @@
         "description": "Location for all resources."
       }
     },
-    "functionWorkerRuntime": {
-      "type": "string",
-      "defaultValue": "dotnet-isolated"
-      ]
-    },
     "packageUri": {
       "type": "string",
-	  "defaultValue": "https://github.com/gabesmsft/FunctionAppHttpResponseTest/blob/master/app.zip",
+      "defaultValue": "https://github.com/gabesmsft/FunctionAppHttpResponseTest/blob/master/app.zip",
       "metadata": {
         "description": "The zip content url."
       }

@@ -5,19 +5,19 @@ using Microsoft.Extensions.Logging;
 
 namespace FunctionAppHttpResponseTest
 {
-    public class FastHttpFunction
+    public class FastHttpFunctionWithSystemKeyAuth
     {
         private readonly ILogger _logger;
 
-        public FastHttpFunction(ILoggerFactory loggerFactory)
+        public FastHttpFunctionWithSystemKeyAuth(ILoggerFactory loggerFactory)
         {
-            _logger = loggerFactory.CreateLogger<FastHttpFunction>();
+            _logger = loggerFactory.CreateLogger<FastHttpFunctionWithSystemKeyAuth>();
         }
 
-        [Function("FastHttpFunction")]
-        public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req)
+        [Function("FastHttpFunctionWithSystemKeyAuth")]
+        public HttpResponseData Run([HttpTrigger(AuthorizationLevel.System, "get", "post")] HttpRequestData req)
         {
-            _logger.LogInformation("FastHttpFunction processed a request.");
+            _logger.LogInformation("FastHttpFunctionWithSystemKeyAuth processed a request.");
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");

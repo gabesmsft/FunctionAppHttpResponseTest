@@ -7,8 +7,12 @@ This sample Azure Resource Manager template deploys a Function App, Storage acco
 
 The Function App contains the following HTTP Triggers:
 
-- /api/FastHttpFunction
-- /api/Http400Function
-- /api/Http500Function
-- /api/Slow10SecondHttpFunction
-- /api/Slow30SecondHttpFunction
+- **FastHttpFunctionAnonymous**: Does not require auth. Should return an HTTP 200 response quickly.
+- **FastHttpFunctionWithFunctionKeyAuth**: Requires a Function key. If a valid key is provided in the request, should return an HTTP 200 response quickly. Otherwise should fail with an authentication error.
+- **FastHttpFunctionWithMasterKeyAuth**: Requires the Function App master key. If a valid key is provided in the request, should return an HTTP 200 response quickly. Otherwise should fail with an authentication error.
+- **FastHttpFunctionWithSystemKeyAuth**: Requires the Function App system key. If a valid key is provided in the request, should return an HTTP 200 response quickly. Otherwise should fail with an authentication error.
+- **FastHttpFunctionWithUserTokenAuth**: Requires a user token (i.e. if you configure Authentication on the Function App). If a valid token is provided in the request, should return an HTTP 200 response quickly. Otherwise should fail with an authentication error.
+- **Http400Function**: Should return an HTTP 400 response. Does not require auth (the auth is set to anonymous on the function).
+- **Http500Function**: Should return an HTTP 500 response. Does not require auth (the auth is set to anonymous on the function).
+- **Slow10SecondHttpFunction**: Should return an HTTP 200 response after ~10 seconds. Does not require auth (the auth is set to anonymous on the function).
+- **Slow30SecondHttpFunction**: Should return an HTTP 200 response after ~10 seconds. Does not require auth (the auth is set to anonymous on the function).
